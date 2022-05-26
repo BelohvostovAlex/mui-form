@@ -77,18 +77,13 @@ export const Form = () => {
             marginTop={6}
           >
             <Grid item>
-              <MainButton
-                text="Create"
-                color="green"
-                width={160}
-                height={50}
-              />
+              <MainButton text="Create" color="green" width={160} height={50} />
             </Grid>
             <Grid item>
               <MainButton
                 onClick={handleClose}
                 text="Cancel"
-                color='rgb(182, 52, 52)'
+                color="rgb(182, 52, 52)"
                 width={160}
                 height={50}
               />

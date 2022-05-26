@@ -1,10 +1,8 @@
-import React from 'react'
+import React from 'react';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
-
-
-export const MainButton = ({text, color, width, height, onClick}) => {
+export const MainButton = ({ text, color, width, height, onClick }) => {
   const MyButton = styled(Button)({
     width: width,
     height: height ? height : 40,
@@ -15,7 +13,5 @@ export const MainButton = ({text, color, width, height, onClick}) => {
     },
     border: '2px solid black',
   });
-  return (
-    <MyButton onClick={onClick}>{text}</MyButton>
-  )
-}
+  return <MyButton onClick={onClick}>{text}</MyButton>;
+};

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
@@ -14,8 +14,6 @@ const MyRoundButton = styled(Button)({
   right: 10,
 });
 
-export const RoundButton = ({onClick, text}) => {
-  return (
-    <MyRoundButton onClick={onClick}>{text}</MyRoundButton>
-  )
-}
+export const RoundButton = ({ onClick, text }) => {
+  return <MyRoundButton onClick={onClick}>{text}</MyRoundButton>;
+};

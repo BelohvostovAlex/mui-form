@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { MainButton } from '../MainButton/MainButton';
+import { RoundButton } from '../RoundButton.jsx/RoundButton';
+
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Modal from '@mui/material/Modal';
@@ -24,27 +26,6 @@ const MyBox = styled(Box)({
   padding: '30px 50px',
 });
 
-const MyButton = styled(Button)({
-  width: 200,
-  background: 'green',
-  color: 'white',
-  '&:hover': {
-    background: 'rgb(18, 112, 18)',
-  },
-  border: '2px solid black',
-});
-
-const MyRoundButton = styled(Button)({
-  width: 40,
-  minWidth: 40,
-  borderRadius: '50%',
-  border: '2px solid black',
-  background: 'rgb(99, 99, 99)',
-  color: 'black',
-  position: 'absolute',
-  top: 10,
-  right: 10,
-});
 const MyTextField = styled(TextField)({
   width: '100%',
   background: 'white',
@@ -62,21 +43,32 @@ export const Form = () => {
   const handleClose = () => setOpen(false);
   return (
     <Container maxWidth="md">
-      <MyButton onClick={handleOpen}>Create todo</MyButton>
-      <Modal
-        open={open}
-        onClose={handleClose}
-      >
+      <MainButton
+        onClick={handleOpen}
+        text="Create todo"
+        color="green"
+        width={200}
+      />
+      <Modal open={open} onClose={handleClose}>
         <MyBox>
-          <MyRoundButton onClick={handleClose}>X</MyRoundButton>
+          <RoundButton onClick={handleClose} text="X" />
           <Typography sx={{ paddingTop: '10px', paddingBottom: '5px' }}>
             Title:
           </Typography>
-          <MyTextField id="title" placeholder='Title...' className='textField'/>
+          <MyTextField
+            id="title"
+            placeholder="Title..."
+            className="textField"
+          />
           <Typography sx={{ paddingTop: '10px', paddingBottom: '5px' }}>
             Description:
           </Typography>
-          <MyTextField id="description" placeholder='Description...' multiline rows={6} />
+          <MyTextField
+            id="description"
+            placeholder="Description..."
+            multiline
+            rows={6}
+          />
           <Grid
             container
             direction="row"
@@ -85,12 +77,21 @@ export const Form = () => {
             marginTop={6}
           >
             <Grid item>
-              <MyButton sx={{ width: 160, height: 50 }}>Create</MyButton>
+              <MainButton
+                text="Create"
+                color="green"
+                width={160}
+                height={50}
+              />
             </Grid>
             <Grid item>
-              <MyButton sx={{ width: 160, height: 50, background: 'rgb(182, 52, 52)'}} onClick={handleClose}>
-                Cancel
-              </MyButton>
+              <MainButton
+                onClick={handleClose}
+                text="Cancel"
+                color='rgb(182, 52, 52)'
+                width={160}
+                height={50}
+              />
             </Grid>
           </Grid>
         </MyBox>

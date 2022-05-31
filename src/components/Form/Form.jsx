@@ -10,32 +10,8 @@ import TextField from '@mui/material/TextField';
 import Modal from '@mui/material/Modal';
 import Grid from '@mui/material/Grid';
 
-import { styled } from '@mui/material/styles';
+import { boxStyles, textFieldStyles, typographyStyles } from './styles';
 
-const MyBox = styled(Box)({
-  width: 500,
-  height: 480,
-  border: '2px solid black',
-  background: 'rgb(181, 181, 181)',
-  position: 'absolute',
-  left: '50%',
-  top: '50%',
-  transform: 'translate(-50%, -50%)',
-  display: 'flex',
-  flexDirection: 'column',
-  padding: '30px 50px',
-});
-
-const MyTextField = styled(TextField)({
-  width: '100%',
-  background: 'white',
-  border: '2px solid black',
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      border: 'none',
-    },
-  },
-});
 
 export const Form = () => {
   const [open, setOpen] = React.useState(false);
@@ -50,24 +26,26 @@ export const Form = () => {
         width={200}
       />
       <Modal open={open} onClose={handleClose}>
-        <MyBox>
+        <Box sx={boxStyles}>
           <RoundButton onClick={handleClose} text="X" />
-          <Typography sx={{ paddingTop: '10px', paddingBottom: '5px' }}>
+          <Typography sx={typographyStyles}>
             Title:
           </Typography>
-          <MyTextField
+          <TextField
             id="title"
             placeholder="Title..."
             className="textField"
+            sx={textFieldStyles}
           />
-          <Typography sx={{ paddingTop: '10px', paddingBottom: '5px' }}>
+          <Typography sx={typographyStyles}>
             Description:
           </Typography>
-          <MyTextField
+          <TextField
             id="description"
             placeholder="Description..."
             multiline
             rows={6}
+            sx={textFieldStyles}
           />
           <Grid
             container
@@ -89,7 +67,7 @@ export const Form = () => {
               />
             </Grid>
           </Grid>
-        </MyBox>
+        </Box>
       </Modal>
     </Container>
   );

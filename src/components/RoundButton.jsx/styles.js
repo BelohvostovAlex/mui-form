@@ -1,5 +1,5 @@
-export const roundButtonStyles = () => {
-  return {
+export const styles = {
+  roundButton: {
     width: 40,
     minWidth: 40,
     borderRadius: '50%',
@@ -13,5 +13,5 @@ export const roundButtonStyles = () => {
       background: 'rgb(80, 80, 80)',
     },
     transition: '.2s all linear',
-  };
+  },
 };

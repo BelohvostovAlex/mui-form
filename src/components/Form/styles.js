@@ -1,5 +1,5 @@
-export const boxStyles = () => {
-  return {
+export const styles = {
+  box: {
     width: 500,
     height: 480,
     border: '2px solid black',
@@ -11,11 +11,8 @@ export const boxStyles = () => {
     display: 'flex',
     flexDirection: 'column',
     padding: '30px 50px',
-  };
-};
-
-export const textFieldStyles = () => {
-  return {
+  },
+  textField: {
     width: '100%',
     background: 'white',
     border: '2px solid black',
@@ -24,9 +21,9 @@ export const textFieldStyles = () => {
         border: 'none',
       },
     },
-  };
-};
-
-export const typographyStyles = () => {
-  return { paddingTop: '10px', paddingBottom: '5px' };
+  },
+  typography: { paddingTop: '10px', paddingBottom: '5px' },
+  button: {
+    color: 'black',
+  },
 };

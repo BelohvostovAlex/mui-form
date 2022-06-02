@@ -11,19 +11,6 @@ export const getStyles = ({ width, height, color }) => ({
   },
 });
 
-// export const mergeClasses = (styles1, styles2) => {
-//   if (!styles2) {
-//     return styles1;
-//   }
-//   return {
-//     ...styles1,
-//     ...styles2,
-//   };
-// };
-
 export const mergeClasses = (...styles) => {
-  return styles.reduce((prev, curr) => {
-    return { ...prev, ...curr };
-  }, {});
+  return styles.reduce((acc, curr) => ({ ...acc, ...curr }), {});
 };
-//если много стилей может передаваться разных, может так лучше или бред?
